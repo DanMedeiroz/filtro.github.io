@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Filtro de dígitos!!</title>
+    <style>
+      body {
+        font-family: Roboto, sans-serif;
+        margin: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      </style>
+  </head>
+  <body>
+    <h1>Filtrar dígitos da área de transferência</h1>
+    <textarea id="inputText" placeholder="Cole o conteúdo aqui..."></textarea>
+    <button onclick="processClipboard()">Filtrar Dígitos</button>
+    <div class="result" id="result"></div>
+
+    <script>
+      async function processClipboard() {
+        try {
+          const text = await navigator.clipboard.readText();
+          const filteredDigits = text.replace(/\D/g, '');
+          document.getElementById('result').textContent = 'Dígitos filtrados: ${filteredDigits}';
+        } catch (err) {
+          console.error('Erro ao acessar a área de transferência:', err);
+          document.getElementById('result').textContent = 'Erro ao acessar a área de transferência.';
+        }
+      }
+    </script>
+  </body>
+</html>
