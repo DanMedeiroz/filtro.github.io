@@ -8,7 +8,8 @@
 /* Estilos globais */
 body {
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Texto branco */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,31 +20,37 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007bff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #007bff; /* Azul vibrante */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Azul mais escuro no hover */
+  transform: scale(1.05); /* Efeito de zoom */
 }
 
 .result {
-  margin-top: 20px;
-  font-size: 1.2rem;
+  margin-top: 30px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #fff;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
 }
 
 .hint {
@@ -51,6 +58,6 @@ button:hover {
   bottom: 20px;
   right: 20px;
   font-size: 0.9rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7); /* Texto branco com transparência */
   opacity: 0.7;
 }
